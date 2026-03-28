@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tranquility Care Hospice | Hospice Services in Glendale, CA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --white: #FFFFFF;
+  --offwhite: #F7F8FA;
+  --navy: #1B2A4A;
+  --navy-light: #2D4470;
+  --blue: #3B6CB5;
+  --blue-light: #E8EFF8;
+  --teal: #2A8F82;
+  --teal-light: #E6F5F3;
+  --slate: #4A5568;
+  --gray: #718096;
+  --gray-light: #A0AEC0;
+  --border: #E2E8F0;
+  --text: #1A202C;
+  --text-secondary: #4A5568;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.06);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 30px rgba(0,0,0,0.1);
+  --radius: 8px;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.65;
+  font-weight: 400;
+}
+
+/* ── NAV ── */
+.topbar {
+  background: var(--navy);
+  color: rgba(255,255,255,0.7);
+  font-size: 0.78rem;
+  padding: 0.5rem 4%;
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  align-items: center;
+}
+.topbar a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.topbar a:hover { color: #fff; }
+
+nav {
+  position: sticky; top: 0; z-index: 100;
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 0 4%;
+  height: 64px;
+  background: var(--white);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+.nav-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.nav-logo {
+  width: 32px; height: 32px;
+  background: var(--teal);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 700; font-size: 0.9rem;
+  font-family: 'Fraunces', serif;
+}
+
+.nav-links { display: flex; gap: 0; align-items: center; height: 100%; }
+.nav-links a {
+  text-decoration: none; color: var(--slate);
+  font-size: 0.88rem; font-weight: 500;
+  padding: 0 1.2rem; height: 100%;
+  display: flex; align-items: center;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.nav-links a:hover { color: var(--blue); border-bottom-color: var(--blue); }
+
+.nav-cta-wrap { display: flex; align-items: center; gap: 0.8rem; }
+.nav-phone {
+  font-size: 0.88rem; font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+}
+.nav-cta {
+  background: var(--teal);
+  color: #fff;
+  padding: 0.5rem 1.3rem;
+  border-radius: var(--radius);
+  font-size: 0.82rem; font-weight: 500;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.nav-cta:hover { background: #247A6F; }
+
+.mobile-toggle { display: none; background: none; border: none; cursor: pointer; padding: 0.5rem; }
+.mobile-toggle span {
+  display: block; width: 20px; height: 2px; background: var(--navy);
+  margin: 4px 0; border-radius: 1px;
+}
+
+/* ── HERO ── */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  color: #fff;
+  padding: 6rem 5%;
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; top: 0; right: 0;
+  width: 40%; height: 100%;
+  background: linear-gradient(135deg, rgba(42,143,130,0.15) 0%, transparent 60%);
+}
+.hero-inner {
+  max-width: 1040px; margin: 0 auto;
+  position: relative; z-index: 2;
+}
+.hero h1 {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 600; line-height: 1.2;
+  margin-bottom: 1.2rem;
+}
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.75);
+  max-width: 580px;
+  margin-bottom: 2rem;
+  line-height: 1.7;
+}
+.hero-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+.btn {
+  display: inline-flex; align-items: center; gap: 0.45rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.88rem; font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s;
+  cursor: pointer; border: none;
+}
+.btn-white { background: #fff; color: var(--navy); }
+.btn-white:hover { background: var(--offwhite); box-shadow: var(--shadow-md); }
+.btn-outline-white { background: transparent; color: #fff; border: 1px solid rgba(255,255,255,0.3); }
+.btn-outline-white:hover { border-color: #fff; background: rgba(255,255,255,0.08); }
+.btn-teal { background: var(--teal); color: #fff; }
+.btn-teal:hover { background: #247A6F; }
+
+
+
+/* ── SECTIONS ── */
+section { padding: 6rem 5%; }
+
+.container { max-width: 1040px; margin: 0 auto; }
+
+.section-header {
+  display: flex; justify-content: space-between;
+  align-items: flex-end; flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 3rem;
+}
+.section-header-left { max-width: 560px; }
+
+.label-tag {
+  display: inline-block;
+  background: var(--teal-light);
+  color: var(--teal);
+  font-size: 0.72rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 100px;
+  margin-bottom: 0.8rem;
+}
+
+.section-title {
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: 600; line-height: 1.25;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+.section-desc {
+  font-size: 0.95rem; color: var(--gray);
+  line-height: 1.7;
+}
+
+/* ── SERVICES ── */
+#services { background: var(--offwhite); }
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.service-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  transition: all 0.25s;
+}
+.service-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--teal);
+}
+.service-icon-wrap {
+  width: 40px; height: 40px;
+  border-radius: var(--radius);
+  background: var(--blue-light);
+  display: flex; align-items: center; justify-content: center;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+}
+.service-card:nth-child(2) .service-icon-wrap { background: var(--teal-light); }
+.service-card:nth-child(3) .service-icon-wrap { background: #FFF5E6; }
+
+.service-card h3 {
+  font-size: 0.95rem; font-weight: 600;
+  color: var(--navy); margin-bottom: 0.4rem;
+}
+.service-card p {
+  font-size: 0.84rem; color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ── ABOUT ── */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-content .section-title { margin-bottom: 1rem; }
+.about-review-col {
+  position: sticky;
+  top: 84px;
+}
+
+.checklist { list-style: none; margin-top: 1.5rem; }
+.checklist li {
+  display: flex; align-items: flex-start; gap: 0.8rem;
+  padding: 0.7rem 0;
+  font-size: 0.9rem; color: var(--text-secondary);
+}
+.checklist li::before {
+  content: '✓';
+  flex-shrink: 0;
+  width: 22px; height: 22px;
+  background: var(--teal-light);
+  color: var(--teal);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.7rem; font-weight: 700;
+  margin-top: 1px;
+}
+
+/* ── REVIEW ── */
+
+.review-card {
+  max-width: 720px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  position: relative;
+}
+.review-stars {
+  color: #F6B73C;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  margin-bottom: 1.2rem;
+}
+.review-text {
+  font-size: 1rem;
+  color: var(--text-secondary);
+  line-height: 1.85;
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+.review-attribution {
+  display: flex; align-items: center; gap: 0.8rem;
+}
+.review-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--navy);
+  display: flex; align-items: center; justify-content: center;
+  color: #fff; font-weight: 600; font-size: 0.9rem;
+}
+.review-name { font-size: 0.9rem; font-weight: 600; color: var(--navy); }
+.review-meta { font-size: 0.78rem; color: var(--gray-light); }
+.review-note {
+  display: block;
+  margin-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--gray-light);
+  font-style: normal;
+}
+.review-badge {
+  position: absolute; top: 2rem; right: 2rem;
+  display: flex; align-items: center; gap: 0.35rem;
+  font-size: 0.72rem; color: var(--gray);
+  font-weight: 500;
+}
+.g-icon { width: 16px; height: 16px; }
+
+/* ── WHY US ── */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.why-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 2rem;
+  background: var(--white);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.25s;
+}
+.why-card:hover { border-color: var(--blue); box-shadow: var(--shadow-sm); }
+.why-card::before {
+  content: '';
+  position: absolute; top: 0; left: 0;
+  width: 3px; height: 100%;
+  background: var(--teal);
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.why-card:hover::before { opacity: 1; }
+.why-number {
+  font-family: 'Fraunces', serif;
+  font-size: 2rem; font-weight: 600;
+  color: var(--border);
+  margin-bottom: 0.5rem;
+}
+.why-card h3 {
+  font-size: 0.95rem; font-weight: 600;
+  color: var(--navy); margin-bottom: 0.4rem;
+}
+.why-card p {
+  font-size: 0.84rem; color: var(--gray);
+  line-height: 1.6;
+}
+
+/* ── CONTACT ── */
+#contact { background: var(--offwhite); }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  max-width: 560px;
+}
+.info-block {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.6rem;
+}
+.info-block + .info-block { margin-top: 1.2rem; }
+.info-block-title {
+  font-size: 0.72rem; font-weight: 600;
+  text-transform: uppercase; letter-spacing: 0.1em;
+  color: var(--gray); margin-bottom: 0.8rem;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.info-block-title svg { color: var(--teal); }
+
+.info-block p {
+  font-size: 0.92rem; color: var(--text);
+}
+.info-block a {
+  color: var(--blue); text-decoration: none; font-weight: 500;
+}
+.info-block a:hover { text-decoration: underline; }
+
+.hours-grid {
+  display: grid; grid-template-columns: auto 1fr;
+  gap: 0.3rem 1.2rem;
+  font-size: 0.88rem;
+}
+.hours-grid .day { color: var(--gray); }
+.hours-grid .time { color: var(--text); }
+.hours-grid .today .day,
+.hours-grid .today .time { color: var(--teal); font-weight: 600; }
+.hours-grid .closed { color: var(--gray-light); font-style: italic; }
+
+
+
+/* ── MAP ── */
+.map-bar {
+  height: 350px;
+  background: #ddd;
+  position: relative;
+  overflow: hidden;
+}
+.map-bar iframe {
+  width: 100%; height: 100%; border: 0;
+  display: block;
+}
+
+/* ── FOOTER ── */
+footer {
+  background: var(--navy);
+  color: rgba(255,255,255,0.5);
+  padding: 3rem 5%;
+}
+.footer-inner {
+  max-width: 1040px; margin: 0 auto;
+  display: flex; justify-content: space-between;
+  align-items: center; flex-wrap: wrap; gap: 1rem;
+}
+.footer-brand {
+  font-family: 'Fraunces', serif;
+  font-size: 1rem; font-weight: 600;
+  color: rgba(255,255,255,0.85);
+}
+footer p { font-size: 0.78rem; }
+.footer-links { display: flex; gap: 1.5rem; }
+.footer-links a {
+  font-size: 0.78rem; color: rgba(255,255,255,0.4);
+  text-decoration: none; transition: color 0.2s;
+}
+.footer-links a:hover { color: rgba(255,255,255,0.8); }
+
+/* ── RESPONSIVE ── */
+
+/* Tablet */
+@media (max-width: 960px) {
+  .services-grid { grid-template-columns: 1fr 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .about-grid { grid-template-columns: 1fr; }
+  .nav-links, .nav-cta-wrap .nav-phone { display: none; }
+  .mobile-toggle { display: block; }
+  .topbar { display: none; }
+  .nav-links.open {
+    display: flex; flex-direction: column;
+    position: absolute; top: 64px; left: 0; right: 0;
+    background: #fff; border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow-md);
+    padding: 1rem 4%; gap: 0;
+    height: auto;
+  }
+  .nav-links.open a {
+    padding: 0.8rem 0; border-bottom: 1px solid var(--border);
+    border-left: none; height: auto;
+  }
+  .nav-links.open a:last-child { border-bottom: none; }
+}
+
+/* Mobile */
+@media (max-width: 580px) {
+  /* Lighter, easier-to-read colors for mobile */
+  .section-title { color: #3D5278; }
+  .label-tag { background: #EEF4F3; color: #4A9E93; }
+  .section-desc,
+  .service-card p,
+  .checklist li,
+  .why-card p,
+  .hours-grid .day,
+  .review-text { color: #6B7685; }
+  .service-card h3,
+  .why-card h3,
+  .about-content .section-title { color: #3D5278; }
+  .why-number { color: #D4DAE2; }
+  .checklist li::before { background: #EEF4F3; color: #4A9E93; }
+  .hero p { color: rgba(255,255,255,0.85); }
+
+  section { padding: 3.5rem 6%; }
+  
+  /* Nav */
+  nav { padding: 0 5%; }
+  .nav-brand { font-size: 1rem; gap: 0.4rem; }
+  .nav-logo { width: 28px; height: 28px; font-size: 0.8rem; }
+  .nav-cta { font-size: 0.75rem; padding: 0.45rem 1rem; }
+
+  /* Hero */
+  .hero { padding: 3.5rem 5% 3rem; }
+  .hero h1 { font-size: 1.7rem; margin-bottom: 1rem; }
+  .hero p { font-size: 0.92rem; margin-bottom: 1.5rem; max-width: 100%; }
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn { width: 100%; justify-content: center; }
+
+  /* Section headers */
+  .section-title { font-size: 1.4rem; }
+  .section-desc { font-size: 0.88rem; }
+  .section-header { margin-bottom: 1.8rem; }
+
+  /* Services */
+  .services-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .service-card { padding: 1.5rem; }
+  .service-card h3 { font-size: 0.92rem; }
+  .service-card p { font-size: 0.85rem; }
+
+  /* About */
+  .about-grid { gap: 0; }
+  .about-content {
+    padding-bottom: 2.5rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 2.5rem;
+  }
+  .about-content .section-title { font-size: 1.3rem; }
+  .about-content .section-desc { font-size: 0.88rem; }
+  .checklist { margin-top: 1.2rem; }
+  .checklist li { font-size: 0.85rem; padding: 0.45rem 0; }
+  .about-review-col::before {
+    content: 'What families are saying';
+    display: block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--gray);
+    margin-bottom: 0.8rem;
+  }
+
+  /* Review */
+  .review-card { padding: 1.4rem; border-radius: 8px; }
+  .review-badge { position: static; margin-bottom: 0.6rem; }
+  .review-stars { margin-bottom: 0.6rem; font-size: 1rem; }
+  .review-text { font-size: 0.88rem; line-height: 1.7; margin-bottom: 1rem; }
+  .review-name { font-size: 0.85rem; }
+  .review-note { font-size: 0.72rem; margin-top: 0.8rem; }
+
+  /* Why us */
+  .why-grid { gap: 1rem; }
+  .why-card { padding: 1.5rem; }
+  .why-number { font-size: 1.5rem; }
+  .why-card h3 { font-size: 0.92rem; }
+  .why-card p { font-size: 0.85rem; }
+
+  /* Contact */
+  .contact-grid { gap: 0.8rem; }
+  .info-block { padding: 1.2rem; }
+  .info-block p { font-size: 0.85rem; }
+  .hours-grid { font-size: 0.82rem; gap: 0.2rem 0.8rem; }
+
+  /* Map */
+  .map-bar { height: 280px; }
+
+  /* Footer */
+  footer { padding: 2.5rem 6%; }
+  .footer-inner { flex-direction: column; text-align: center; gap: 0.8rem; }
+  .footer-links { gap: 1rem; flex-wrap: wrap; justify-content: center; }
+}
+
+/* Animate in */
+.fade-in {
+  opacity: 0; transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <a href="tel:8183309153">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+    (818) 330-9153
+  </a>
+  <span>3704 Foothill Blvd, Glendale, CA 91214</span>
+  <span>Mon–Fri: 10 AM – 4 PM</span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">
+    <div class="nav-logo">T</div>
+    Tranquility Care Hospice
+  </a>
+  <div class="nav-links" id="navLinks">
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#why">Why Us</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <div class="nav-cta-wrap">
+    <a href="tel:8183309153" class="nav-phone">(818) 330-9153</a>
+    <a href="#contact" class="nav-cta">Get in Touch</a>
+  </div>
+  <button class="mobile-toggle" id="menuBtn" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <h1>Compassionate hospice care in Glendale, California</h1>
+      <p>Tranquility Care Hospice provides expert end-of-life care that prioritizes dignity, comfort, and family support. We serve patients in their homes, assisted living, and skilled nursing facilities throughout the greater Los Angeles area.</p>
+      <div class="hero-actions">
+        <a href="tel:8183309153" class="btn btn-white">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          Call (818) 330-9153
+        </a>
+        <a href="#services" class="btn btn-outline-white">View Our Services</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="label-tag">Services</div>
+        <h2 class="section-title">Comprehensive hospice services</h2>
+        <p class="section-desc">From medical management to emotional and spiritual support, our interdisciplinary team delivers a full spectrum of hospice care.</p>
+      </div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card fade-in">
+        <div class="service-icon-wrap">🩺</div>
+        <h3>Medical Care</h3>
+        <p>Expert pain and symptom management provided by our medical director and registered nurses to ensure patient comfort.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon-wrap">🏠</div>
+        <h3>Home-Based Care</h3>
+        <p>Receive hospice care in the comfort of your own home, surrounded by family and familiar surroundings.</p>
+      </div>
+      <div class="service-card fade-in">
+        <div class="service-icon-wrap">🤝</div>
+        <h3>Family Support</h3>
+        <p>Counseling, education, and respite services to help family members and caregivers through difficult times.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-content">
+        <div class="label-tag">About Us</div>
+        <h2 class="section-title">Expert care through life's final chapter</h2>
+        <p class="section-desc">Tranquility Care Hospice provides comprehensive, compassionate hospice care throughout Glendale and the greater Los Angeles area. Our interdisciplinary team includes physicians, nurses, social workers, and chaplains.</p>
+        <ul class="checklist">
+          <li>Compassion-first approach centered on patient dignity and wishes</li>
+          <li>Experienced medical team with specialized hospice training</li>
+          <li>Holistic care addressing physical, emotional, and spiritual needs</li>
+          <li>Culturally sensitive service for diverse communities</li>
+          <li>Ongoing family support and caregiver education</li>
+        </ul>
+      </div>
+      <div class="about-review-col">
+        <!-- Review card positioned here for visual balance -->
+        <div class="review-card">
+          <div class="review-badge">
+            <svg class="g-icon" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg>
+            Google Review
+          </div>
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"From the moment they began caring for my grandmother, it was clear that this is not just a job for them — it's a calling. The home nurses and all staff went above and beyond in every aspect of their care. They made what could have been an unbearable experience into one filled with peace, dignity, and love."</p>
+          <div class="review-attribution">
+            <div class="review-avatar">L</div>
+            <div>
+              <div class="review-name">Lorraine</div>
+              <div class="review-meta">Family of a patient</div>
+            </div>
+          </div>
+          <span class="review-note">Excerpt from Google review — shortened for brevity.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="label-tag">Why Choose Us</div>
+        <h2 class="section-title">The Tranquility difference</h2>
+      </div>
+    </div>
+    <div class="why-grid">
+      <div class="why-card fade-in">
+        <div class="why-number">01</div>
+        <h3>5-Star Rated</h3>
+        <p>A perfect 5.0 Google rating reflects our commitment to quality care and family satisfaction.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-number">02</div>
+        <h3>Locally Rooted</h3>
+        <p>Based in Glendale, we serve the diverse communities of greater Los Angeles with cultural sensitivity.</p>
+      </div>
+      <div class="why-card fade-in">
+        <div class="why-number">03</div>
+        <h3>Always Accessible</h3>
+        <p>Our clinical team is available around the clock. A real person answers — day or night, weekends and holidays.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-header-left">
+        <div class="label-tag">Contact</div>
+        <h2 class="section-title">Get in touch</h2>
+        <p class="section-desc">We're here to answer questions and help you get started with hospice care.</p>
+      </div>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="info-block">
+          <div class="info-block-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            Location
+          </div>
+          <p>3704 Foothill Blvd, Glendale, CA 91214</p>
+        </div>
+        <div class="info-block">
+          <div class="info-block-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            Phone
+          </div>
+          <p><a href="tel:8183309153">(818) 330-9153</a></p>
+        </div>
+        <div class="info-block">
+          <div class="info-block-title">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Office Hours
+          </div>
+          <div class="hours-grid" id="hoursGrid">
+            <span class="day">Monday</span><span class="time">10:00 AM – 4:00 PM</span>
+            <span class="day">Tuesday</span><span class="time">10:00 AM – 4:00 PM</span>
+            <span class="day">Wednesday</span><span class="time">10:00 AM – 4:00 PM</span>
+            <span class="day">Thursday</span><span class="time">10:00 AM – 4:00 PM</span>
+            <span class="day">Friday</span><span class="time">10:00 AM – 4:00 PM</span>
+            <span class="day">Saturday</span><span class="time closed">Closed</span>
+            <span class="day">Sunday</span><span class="time closed">Closed</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- MAP -->
+<div class="map-bar">
+  <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=3704+Foothill+Blvd,+Glendale,+CA+91214&zoom=15" loading="lazy" allowfullscreen title="Tranquility Care Hospice - 3704 Foothill Blvd, Glendale, CA 91214"></iframe>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">Tranquility Care Hospice</div>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+      <a href="tel:8183309153">(818) 330-9153</a>
+    </div>
+    <p>&copy; 2026 Tranquility Care Hospice. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+document.getElementById('menuBtn').addEventListener('click', () => {
+  document.getElementById('navLinks').classList.toggle('open');
+});
+document.querySelectorAll('.nav-links a').forEach(a => {
+  a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+});
+
+// Scroll reveal
+const fadeEls = document.querySelectorAll('.fade-in');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) {
+      setTimeout(() => e.target.classList.add('visible'), i * 80);
+    }
+  });
+}, { threshold: 0.15 });
+fadeEls.forEach(el => obs.observe(el));
+
+// Highlight today
+const days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const today = days[new Date().getDay()];
+const grid = document.getElementById('hoursGrid');
+const spans = grid.querySelectorAll('.day');
+spans.forEach(s => {
+  if (s.textContent.trim() === today) {
+    s.classList.add('today');
+    s.nextElementSibling.classList.add('today');
+  }
+});
+</script>
+
+</body>
+</html>
